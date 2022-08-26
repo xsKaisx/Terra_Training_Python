@@ -1,4 +1,3 @@
-#from typing import literal
 class CashRegister():
     def __init__(self) :
         self.retail_list = []
@@ -8,14 +7,22 @@ class CashRegister():
         item_list_price = []
         for element in self.retail_list:
             item_list_price.append(element.item_price)
-        print("Total price of all items is : {0:,} VND".format(sum(item_list_price)))
+        self.total_price = sum(item_list_price)
+        print("Total price of all items is : {0:,} VND".format(self.total_price))
+        return self.total_price
     def show_items(self):
         for element in self.retail_list:
             print(element.__dict__)
     def clear(self):
         self.retail_list = []
-    def sell_item(self) -> tuple :
-        self.sale_status = "SUCCESS"
-        self.change = 5000
-        self.amount = 20000
-        return print(tuple((self.sale_status,self.change,self.amount)))
+    def sell_item(self,obj_bank,amount) -> tuple :
+        self.amount = amount
+        if self.amount > self.total_price and obj_bank.balance > self.amount :
+            self.sale_status = "SUCCESS"
+        else : 
+            self.sale_status = "FAILED"
+        self.change = self.amount - self.total_price
+        obj_bank.Withdraw(self.total_price)
+        return tuple((self.sale_status,self.change,self.amount))
+
+    
