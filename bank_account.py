@@ -126,12 +126,14 @@ class CashRegister():
         """ time to pay """
         balance = clint_nguyen.balance
         if balance >= self.get_total():
-            print("payment in processing...")
+            # print("payment in processing...")
             payment = clint_nguyen.withdrawal(self.get_total())
-            print("Payment is completed")
-            print(payment)
+            # print("Payment is completed")
+            # print(payment)
+            return "SUCCESS"
         else:
             print("Your balance is not enough to continue this transaction")
+            return "FAILED"
 
 
 list_item = [
