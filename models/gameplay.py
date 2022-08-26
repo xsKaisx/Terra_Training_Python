@@ -1,0 +1,15 @@
+import deck,card,player,game
+if __name__ == "__main__":
+    d = deck.Deck()
+    d.card_shuffle()
+    g = game.Game(name="North Forward",deck=d,max_players=4)
+    print(g)
+    distribute_card = g.distribute_card()
+    p1 = player.Player(name="A",index=1,current_cards=distribute_card.get('p1'))
+    p2 = player.Player(name="B",index=2,current_cards=distribute_card.get('p2'))
+    p3 = player.Player(name="C",index=3,current_cards=distribute_card.get('p3'))
+    p4 = player.Player(name="D",index=4,current_cards=distribute_card.get('p4'))
+    print(p1)
+    print(p2)
+    print(p3)
+    print(p4)
