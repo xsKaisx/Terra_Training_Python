@@ -8,9 +8,6 @@ Bank account
 - Create a display() method to display account details.
 - Give the complete code for the  BankAccount class.
 
-"""
-
-"""
 Cash machine: Cash machine và Bank account phải làm việc tương tác với nhau hơp lí
 This exercise assumes that you have created the RetailItem class for Programming
 Exercise 5. Create a CashRegister class that can be used with the RetailItem class. The CashRegister class should be able to internally keep a list of RetailItem objects. The class should have the following methods:
@@ -32,6 +29,7 @@ Demonstrate the CashRegister class in a program that allows the user to select s
 """
 
 """
+------------------------------------------------------------------------
 
 Fraction
 
@@ -47,8 +45,14 @@ Fraction
 """
 
 """
-Book (super easy)
+------------------------------------------------------------------------
+Bank Account
 
+Make a class that represents a bank account. Create four methods named set_details, display, withdraw and deposit. In the set_details method, create two instance variables : name and balance. The default value for balance should be zero. In the display method, display the values of these two instance variables. Both the methods withdraw and deposit have amount as parameter. Inside withdraw, subtract the amount from balance and inside deposit, add the amount to the balance. Create two instances of this class and call the methods on those instances.
+
+Delete the set_detail() method and create an  __init__ method
+
+Book
 Create a class named Book with an __init__ method. Inside the __init__ method, create the instance variables isbn, title, author, publisher, pages, price, copies
 Create these four instance objects from this class and write a method display that prints the isbn, title, price and number of copies of the book
 Write a method named in_stock that returns True if number of copies is more than zero, otherwise it returns False
