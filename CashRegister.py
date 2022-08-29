@@ -11,10 +11,9 @@ class CashRegister():
         print("Total price of all items is : {0:,} VND".format(self.total_price))
         return self.total_price
     def show_items(self):
-        for element in self.retail_list:
-            print(element.__dict__)
+        print(repr(self.retail_list))
     def clear(self):
-        self.retail_list = []
+        self.retail_list.clear()
     def sell_item(self,obj_bank,amount) -> tuple :
         self.amount = amount
         if self.amount > self.total_price and obj_bank.balance > self.amount :
