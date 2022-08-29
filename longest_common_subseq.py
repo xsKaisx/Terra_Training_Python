@@ -1,22 +1,26 @@
 def longestStringSubsequence(s1,s2):
     result = ''
     while result == '':
-        com = list(set(s1)&set(s2))
-        s1 = ''.join([i for i in s1 if i in com])
-        s2 = ''.join([i for i in s2 if i in com])
-        if len(s1) >= len(s2):
-            if s2 not in s1:
-                s2 = s2[:-1]
+        com = list(set(text1)&set(text2))
+        for i in text1:
+            if i not in com:
+                text1 = text1.replace(i,'')
+        for i in text2:
+            if i not in com:
+                text2 = text2.replace(i,'')
+        if len(text1) >= len(text2):
+            if text2 not in text1:
+                text2 = text2[:-1]
             else:
-                result += s2
+                result += text2
         else:
-            if s1 not in s2:
-                s1 = s1[:-1]
+            if text1 not in text2:
+                text1 = text1[:-1]
             else:
-                result += s1
+                result += text1
     return result
 if __name__  == "__main__":
-    s1 = "AAAA"
-    s2 = "AA"
+    s1 = "AGGTAB"
+    s2 = "GXTXAYB"
     res = longestStringSubsequence(s1,s2)
     print(res)
