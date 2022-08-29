@@ -1,4 +1,4 @@
-def longestStringSubsequence(s1,s2):
+def longestStringSubsequence(text1,text2):
     result = ''
     while result == '':
         com = list(set(text1)&set(text2))
