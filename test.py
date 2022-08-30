@@ -38,17 +38,6 @@ class BankAccount():
 			print("Dau vao khong hop le")
 
 
-dat1=BankAccount(143123412,"dat1",0)
-dat2=BankAccount(65463325,"dat2",100)
-dat1.display()
-dat1.withdraw(123)
-dat1.deposit(231)
-dat1.withdraw(100)
-dat1.display()
-
-dat2.deposit(10000)
-dat2.withdraw(10099)
-
 class Book():
 	number_of_book = 0
 	instances = []
