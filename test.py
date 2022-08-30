@@ -14,12 +14,12 @@ class BankAccount():
 	""" Inside withdraw, subtract the amount from balance """
 	def withdraw(self, ruttien: int):
 		try:
-			if self.sodu < ruttien:
-				print("So du:",self.sodu,"|","Rut:",ruttien)
+			soducu = self.sodu
+			bankfee = self.sodu*5/100
+			if self.sodu < ruttien+bankfee:
+				print("So du:",self.sodu,"|","Rut:",ruttien,"|","Bankfee:",bankfee)
 				print("????")
 			else:
-				soducu = self.sodu
-				bankfee = self.sodu*5/100
 				self.sodu = self.sodu - ruttien - bankfee
 				print("Ban da rut tien thanh cong, tai khoan bi tru -" + str(ruttien) + "$ va phi giao dich -"
 					+str(bankfee)+"$, so du ban dau", str(soducu)+"$")
@@ -37,6 +37,17 @@ class BankAccount():
 		except:
 			print("Dau vao khong hop le")
 
+
+dat1=BankAccount(143123412,"dat1",0)
+dat2=BankAccount(65463325,"dat2",100)
+dat1.display()
+dat1.withdraw(123)
+dat1.deposit(231)
+dat1.withdraw(100)
+dat1.display()
+
+dat2.deposit(10000)
+dat2.withdraw(10099)
 
 class Book():
 	number_of_book = 0
