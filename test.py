@@ -1,25 +1,41 @@
 class BankAccount():
-    """docstring for BankAccount"""
-    def __init__(self, name: str, balance=0):
-        self.ten = name
-        self.sodu = balance
+	"""docstring for BankAccount"""
+	def __init__(self, accountnumber: int, name: str, balance=0):
+		self.stk = accountnumber
+		self.ten = name
+		self.sodu = balance
 
-    """ display the values of these two instance variables """
-    def display(self):
-        print("Chu tai khoan:", self.ten)
-        print("So du tai khoan: "+ str(self.sodu) + "$")
+	""" display the values of these two instance variables """
+	def display(self):
+		print("So tai khoan", self.stk)
+		print("Chu tai khoan:", self.ten)
+		print("So du tai khoan: "+ str(self.sodu) + "$")
 
-    """ Inside withdraw, subtract the amount from balance """
-    def withdraw(self, ruttien: int):
-    	if self.sodu < ruttien:
-    		print("So du:",self.sodu,"|","Rut:",ruttien)
-    		print("????")
-    	else:
-    		self.sodu = self.sodu - ruttien
+	""" Inside withdraw, subtract the amount from balance """
+	def withdraw(self, ruttien: int):
+		try:
+			if self.sodu < ruttien:
+				print("So du:",self.sodu,"|","Rut:",ruttien)
+				print("????")
+			else:
+				soducu = self.sodu
+				bankfee = self.sodu*5/100
+				self.sodu = self.sodu - ruttien - bankfee
+				print("Ban da rut tien thanh cong, tai khoan bi tru -" + str(ruttien) + "$ va phi giao dich -"
+					+str(bankfee)+"$, so du ban dau", str(soducu)+"$")
+				print("So du hien tai: "+str(self.sodu)+"$")
+		except:
+			print("Dau vao khong hop le")
 
-    """ inside deposit, add the amount to the balance """
-    def deposit(self, naptien: int):
-    	self.sodu = self.sodu + naptien
+	""" inside deposit, add the amount to the balance """
+	def deposit(self, naptien: int):
+		try:
+			soducu = self.sodu
+			self.sodu = self.sodu + naptien
+			print("Ban da nap tien thanh cong, tai khoan cuoc cong +" + str(naptien) + "$ vao "+ str(soducu)+"$")
+			print("So du hien tai:",str(self.sodu)+"$")
+		except:
+			print("Dau vao khong hop le")
 
 
 class Book():
