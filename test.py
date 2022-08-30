@@ -38,6 +38,7 @@ class BankAccount():
 			print("Dau vao khong hop le")
 
 
+
 class Book():
 	number_of_book = 0
 	instances = []
@@ -84,7 +85,8 @@ class Book():
 
 
 	""" Father of display, DISPLAY ALL """
-	def display_all(self):
+	@staticmethod
+	def display_all():
 		print("----------------------ALL------------------------")
 		for obj in Book.instances:
 			print("isbn(la cai db j):",obj[0])
@@ -96,9 +98,10 @@ class Book():
 
 
 	""" contains title of books written by specific author """
-	def find_title_from_author(self,a):
+	@staticmethod
+	def find_title_from_author(a):
 		try:
-			print(Book.instances1[a])
+			print(a,":",Book.instances1[a])
 		except:
 			raise ("Author not exist or you nhap sai ten tac gia")
 
@@ -114,3 +117,16 @@ class Book():
 			raise ValueError("price of a book cannot be less than 50 or more than 1000")
 		else:
 			self._price = data
+
+
+# book1=Book("asd","Toi va ban","Trinh anh tu","NXB Viet Nam","90",100,13)
+# book2=Book("ari","Chu be chan cuu","Trinh anh tu","NXB Viet Nam","50",50,20)
+# book3=Book("bwe","You and I","David Thomson","NXB Megaric","120",200,9)
+# book4=Book("cwhg","De men phieu luu ky","To Hoai","NXB Truong son","115",120,11)
+# book5=Book("ddfgd","Ma toc do","Alan Walker","NXB Tiky","1235",150,11)
+
+# book1.display_all()
+
+
+# book1.find_title_from_author("Trinh anh tu")
+# Book.find_title_from_author("David Thomson")
