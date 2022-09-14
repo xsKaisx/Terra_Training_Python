@@ -13,9 +13,14 @@ class BankAccount():
 
     def deposit(self,amount_de):
         self.balance = self.balance + amount_de
-    def Withdraw(self,amount_with):
-        self.balance = self.balance - amount_with
-    def bankFee(self):
-        self.balance = self.balance - self.balance*0.05
+    def withdraw(self,amount_with):
+        if amount_with > self.balance : 
+            raise TypeError("Withdraw amount must be less than balance !")
+        self.amount_with = amount_with
+        def bankFee(nice):
+            self.bankfee = nice*0.05
+            return self.bankfee
+        self.balance = self.balance - (self.amount_with+ bankFee(self.amount_with))
+        print("Withdraw fee is  : {0:,} VND".format(self.bankfee))
     def display(self):
-        print(("Bank balance is : {0:,} VND".format(self.balance)))
+        print("Bank balance is : {0:,} VND".format(self.balance))

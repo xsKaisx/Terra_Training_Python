@@ -21,7 +21,7 @@ class CashRegister():
         else : 
             self.sale_status = "FAILED"
         self.change = self.amount - self.total_price
-        obj_bank.Withdraw(self.total_price)
+        obj_bank.withdraw(self.total_price)
         return tuple((self.sale_status,self.change,self.amount))
 
     
