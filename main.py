@@ -46,8 +46,11 @@ class Fraction:
         nr = self.nr*other.dr
         dr = self.dr*other.nr
         return Fraction(nr, dr)
+    
+    def __repr__(self):
+        return f"{self.nr}/{self.dr}"
         
-f1 = Fraction(-3,0)
+f1 = Fraction(-3)
 f2 = Fraction(-1,5)
 f3 = f1 + 5
 f4 = f1 - 2
@@ -56,4 +59,4 @@ f6 = f1 / f2
 f3.show()
 f4.show()
 f5.show()
-f6.show()
+print(f6)
