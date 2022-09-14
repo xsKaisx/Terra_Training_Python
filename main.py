@@ -1,6 +1,6 @@
 class Fraction:
     def __init__(self, nr: int, dr = 1):
-        assert nr != 0, f"Numerator cannot equal to zero!"
+        assert dr != 0, f"Numerator cannot equal to zero!"
                 
         if nr < 0 and dr <0:
             self.nr, self.dr = self.__reduce(-nr, -dr)
@@ -47,7 +47,7 @@ class Fraction:
         dr = self.dr*other.nr
         return Fraction(nr, dr)
         
-f1 = Fraction(-3,4)
+f1 = Fraction(-3,0)
 f2 = Fraction(-1,5)
 f3 = f1 + 5
 f4 = f1 - 2
